@@ -6,7 +6,6 @@ import "mdbreact/dist/css/mdb.css";
 import "antd/dist/antd.css";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
-import App from "./App";
 import Routes from "./routes";
 
 import registerServiceWorker from "./registerServiceWorker";

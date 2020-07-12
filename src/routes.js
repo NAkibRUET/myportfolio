@@ -16,7 +16,7 @@ class Routes extends Component {
     return (
       <Layout>
         <Switch>
-          <Route path="/myportfolio" exact component={Home} />
+          <Route path="/" exact component={Home} />
         </Switch>
       </Layout>
     );
