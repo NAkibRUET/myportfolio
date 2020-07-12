@@ -24,7 +24,7 @@ class NavbarPage extends Component {
       <Router>
         <MDBNavbar color="black" dark expand="md" className="px-lg-5 px-md-5">
           <MDBNavbarBrand className="pl-lg-5">
-            <img src={process.env.PUBLIC_URL + "./icon4.png"} width="50" />
+            <img src={"./icon4.png"} width="50" />
           </MDBNavbarBrand>
           <MDBNavbarToggler onClick={this.toggleCollapse} />
           <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>

@@ -111,23 +111,23 @@ class Weather extends React.Component {
     let url1;
     let icon = this.props.weatherData.current.weather[0].icon;
     if (icon == "50d") {
-      url1 = process.env.PUBLIC_URL + "./haze_day.jpg";
+      url1 = "./haze_day.jpg";
     }
     //
     else if (icon == "04n" || icon == "04d") {
-      url1 = process.env.PUBLIC_URL + "./cloudy.jpeg";
+      url1 = "./cloudy.jpeg";
     }
     //
     else if (icon == "10n" || icon == "9n" || icon == "10d" || icon == "9d") {
-      url1 = process.env.PUBLIC_URL + "./rain1.webp";
+      url1 = "./rain1.webp";
     }
     //
     else if (icon == "11n" || icon == "11d") {
-      url1 = process.env.PUBLIC_URL + "./thunderStorm.jpg";
+      url1 = "./thunderStorm.jpg";
     }
     //
     else {
-      url1 = process.env.PUBLIC_URL + "./else.jpg";
+      url1 = "./else.jpg";
     }
 
     return (
