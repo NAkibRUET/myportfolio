@@ -23,7 +23,7 @@ const styles = (theme) => ({
     marginTop: "20px",
   },
   WeatherDiv1: {
-    padding: "45px 0px",
+    padding: "15% 0px",
   },
 });
 function formatHour(hour10) {
@@ -118,7 +118,7 @@ class Weather extends React.Component {
       url1 = "./cloudy.jpeg";
     }
     //
-    else if (icon == "10n" || icon == "9n" || icon == "10d" || icon == "9d") {
+    else if (icon == "10n" || icon == "09n" || icon == "10d" || icon == "09d") {
       url1 = "./rain1.webp";
     }
     //

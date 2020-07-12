@@ -42,9 +42,9 @@ const styles = (theme) => ({
     borderColor: "#ffffff",
     borderRadius: "50%",
   },
-
-  WeatherDiv2: {
-    padding: "45px 0px",
+  containerDiv: {
+    maxWidth: "1500px",
+    margin: "0 auto",
   },
 });
 
@@ -141,7 +141,7 @@ class Home extends React.Component {
     return (
       <div className="px-lg-5 px-md-5">
         <div className="px-lg-5 px-md-5">
-          <Paper elevation={24}>
+          <Paper elevation={24} className={classes.containerDiv}>
             <Grid container spacing={0} className={classes.sections}>
               <Grid item lg={4} md={6} sm={12} xs={12}>
                 <div className={classes.personalInfo}>
