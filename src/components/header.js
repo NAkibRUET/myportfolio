@@ -47,9 +47,9 @@ class NavbarPage extends Component {
             <MDBNavbarToggler onClick={this.toggleCollapse} />
             <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
               <MDBNavbarNav right className="pr-lg-5">
-                <MDBNavItem active={pathName == "/myportfolio"}>
+                <MDBNavItem active={pathName == "/myportfolio/"}>
                   <MDBNavLink
-                    to="/"
+                    to="/myportfolio"
                     onClick={() => this.props.history.push("/myportfolio")}
                   >
                     Home
