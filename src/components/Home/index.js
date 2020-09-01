@@ -148,7 +148,7 @@ class Home extends React.Component {
             <Grid container spacing={0} className={classes.sections}>
               <Grid item lg={4} md={6} sm={12} xs={12}>
                 <div className={classes.personalInfo}>
-                  <img src="/01.jpg" className={classes.images} />
+                  <img src="./01.jpg" className={classes.images} />
                   <br />
                   <Typography align="center" variant="h5" color="secondary">
                     Nakib Hossain

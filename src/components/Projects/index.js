@@ -32,36 +32,36 @@ const projectDetails = {
 
 const tutorialSteps = [
   {
-    imgPath: "/epres01.png",
+    imgPath: "./epres01.png",
   },
   {
-    imgPath: "/epres02.png",
+    imgPath: "./epres02.png",
   },
   {
-    imgPath: "/ePres04.png",
+    imgPath: "./ePres04.png",
   },
   {
-    imgPath: "/epres05.png",
+    imgPath: "./epres05.png",
   },
 ];
 const tutorialSteps2 = [
   {
-    imgPath: "/madrasa10.png",
+    imgPath: "./madrasa10.png",
   },
   {
-    imgPath: "/madrasa06.png",
+    imgPath: "./madrasa06.png",
   },
   {
-    imgPath: "/madrasa04.png",
+    imgPath: "./madrasa04.png",
   },
   {
-    imgPath: "/madrasa09.png",
+    imgPath: "./madrasa09.png",
   },
   {
-    imgPath: "/madrasa03.png",
+    imgPath: "./madrasa03.png",
   },
   {
-    imgPath: "/madrasa02.png",
+    imgPath: "./madrasa02.png",
   },
 ];
 
