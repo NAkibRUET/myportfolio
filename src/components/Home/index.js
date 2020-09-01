@@ -35,7 +35,7 @@ const styles = (theme) => ({
     height: "100%",
   },
   sections: {
-    marginTop: "20px",
+    marginTop: "40px",
   },
   ClockPos: {
     backgroundColor: "#ffffff",
@@ -100,6 +100,8 @@ class Home extends React.Component {
       loading: false,
       noInternet1: false,
       noInternet2: false,
+      swapDiv: false,
+      opacityVal: 0.9,
     };
   }
   componentDidMount() {
@@ -107,6 +109,7 @@ class Home extends React.Component {
       loading: true,
     });
     setInterval(() => this.setState({ date: new Date() }), 1000);
+
     Axios.get(
       "https://api.openweathermap.org/data/2.5/onecall?lat=23.8103&lon=90.4125&appid=" +
         AppConfig.WEATHER_API_KEY
@@ -117,7 +120,7 @@ class Home extends React.Component {
         });
         setTimeout(() => {
           this.setState({ loading: false });
-        }, 1500);
+        }, 200);
       })
       .catch((response) => {
         this.setState({ loading: false, noInternet1: true });
@@ -145,12 +148,18 @@ class Home extends React.Component {
             <Grid container spacing={0} className={classes.sections}>
               <Grid item lg={4} md={6} sm={12} xs={12}>
                 <div className={classes.personalInfo}>
-                  <img src={"./01.jpg"} className={classes.images} />
-                  <Typography align="center" variant="h5" color="primary">
+                  <img src="/01.jpg" className={classes.images} />
+                  <br />
+                  <Typography align="center" variant="h5" color="secondary">
                     Nakib Hossain
                   </Typography>
-                  <Typography align="center" variant="h6" color="secondary">
-                    Software Developer
+
+                  <Typography
+                    align="center"
+                    variant="subtitle2"
+                    className={classes.textColor}
+                  >
+                    CSE, RUET
                   </Typography>
                   <Typography
                     align="center"
@@ -176,52 +185,51 @@ class Home extends React.Component {
                 ) : (
                   <Grid container>
                     <Grid item lg={6} xs={12}>
-                      {this.state.noInternet1 == false ? (
-                        <Weather
-                          weatherData={this.state.weatherData1}
-                          CT_NAME="Dhaka"
-                        />
-                      ) : null}
+                      <div>
+                        {this.state.noInternet1 == false ? (
+                          <Weather
+                            weatherData={this.state.weatherData1}
+                            CT_NAME="Dhaka"
+                          />
+                        ) : null}
+                      </div>
                     </Grid>
-                    <Grid item lg={6} xs={12}>
-                      {this.state.noInternet2 == false ? (
-                        <Weather
-                          weatherData={this.state.weatherData2}
-                          CT_NAME="Jhenidah"
+                    <Grid item lg={6} xs={12} style={{ background: "black" }}>
+                      <div
+                        style={{
+                          width: "250px",
+                          margin: "15% auto",
+                        }}
+                      >
+                        <Clock
+                          value={this.state.date}
+                          hourHandLength={60}
+                          hourHandOppositeLength={20}
+                          hourHandWidth={8}
+                          hourMarksLength={20}
+                          hourMarksWidth={8}
+                          minuteHandLength={90}
+                          minuteHandOppositeLength={20}
+                          minuteHandWidth={6}
+                          minuteMarksWidth={3}
+                          secondHandLength={75}
+                          secondHandOppositeLength={25}
+                          secondHandWidth={3}
+                          size={250}
+                          minuteMarksLength={6}
+                          renderHourMarks={true}
+                          renderMinuteHand={true}
+                          renderMinuteMarks={true}
+                          renderSecondHand={true}
+                          className={classes.ClockPos}
                         />
-                      ) : null}
+                      </div>
                     </Grid>
                   </Grid>
                 )}
               </Grid>
             </Grid>
           </Paper>
-          <div
-            style={{ display: "block", width: "150px", margin: "20px auto" }}
-          >
-            <Clock
-              value={this.state.date}
-              hourHandLength={60}
-              hourHandOppositeLength={20}
-              hourHandWidth={8}
-              hourMarksLength={20}
-              hourMarksWidth={8}
-              minuteHandLength={90}
-              minuteHandOppositeLength={20}
-              minuteHandWidth={6}
-              minuteMarksWidth={3}
-              secondHandLength={75}
-              secondHandOppositeLength={25}
-              secondHandWidth={3}
-              size={150}
-              minuteMarksLength={6}
-              renderHourMarks={true}
-              renderMinuteHand={true}
-              renderMinuteMarks={true}
-              renderSecondHand={true}
-              className={classes.ClockPos}
-            />
-          </div>
         </div>
       </div>
     );

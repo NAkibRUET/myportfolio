@@ -105,35 +105,35 @@ class Weather extends React.Component {
     let months1 = months[timeStamp.getMonth()];
     let date = timeStamp.getDate();
 
-    date = date + months1;
+    date = date + " " + months1;
 
     //let url = process.env.PUBLIC_URL + "./rain1.webp";
-    let url1;
-    let icon = this.props.weatherData.current.weather[0].icon;
-    if (icon == "50d") {
-      url1 = "./haze_day.jpg";
-    }
-    //
-    else if (icon == "04n" || icon == "04d") {
-      url1 = "./cloudy.jpeg";
-    }
-    //
-    else if (icon == "10n" || icon == "09n" || icon == "10d" || icon == "09d") {
-      url1 = "./rain1.webp";
-    }
-    //
-    else if (icon == "11n" || icon == "11d") {
-      url1 = "./thunderStorm.jpg";
-    }
-    //
-    else {
-      url1 = "./else.jpg";
-    }
+    // let url1;
+    // let icon = this.props.weatherData.current.weather[0].icon;
+    // if (icon == "50d") {
+    //   url1 = process.env.PUBLIC_URL + "./haze_day.jpg";
+    // }
+    // //
+    // else if (icon == "04n" || icon == "04d") {
+    //   url1 = process.env.PUBLIC_URL + "./cloudy.jpeg";
+    // }
+    // //
+    // else if (icon == "10n" || icon == "09n" || icon == "10d" || icon == "09d") {
+    //   url1 = process.env.PUBLIC_URL + "./rain1.webp";
+    // }
+    // //
+    // else if (icon == "11n" || icon == "11d") {
+    //   url1 = process.env.PUBLIC_URL + "./thunderStorm.jpg";
+    // }
+    // //
+    // else {
+    //   url1 = process.env.PUBLIC_URL + "./else.jpg";
+    // }
 
     return (
       <div
         style={{
-          backgroundImage: `url(${url1})`,
+          backgroundColor: "black",
         }}
         className={classes.WeatherDiv1}
       >

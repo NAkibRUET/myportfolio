@@ -1,0 +1,20 @@
+.n-info {
+  font-family: "Exo 2", sans-serif;
+}
+
+.n-info h4 {
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+  padding-bottom: 5px;
+}
+
+.n-info p {
+  text-align: justify;
+  font-size: 13px;
+}
+
+.n-details {
+  border-top: 1px solid #ddd;
+  font-family: "Exo 2", sans-serif;
+  /* padding-top: 7px; */
+}
