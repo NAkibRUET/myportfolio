@@ -49,8 +49,8 @@ class NavbarPage extends Component {
               <MDBNavbarNav right className="pr-lg-5">
                 <MDBNavItem active={pathName == "/myportfolio/"}>
                   <MDBNavLink
-                    to="/myportfolio"
-                    onClick={() => this.props.history.push("/myportfolio")}
+                    to="/myportfolio/"
+                    onClick={() => this.props.history.push("/myportfolio/")}
                   >
                     Home
                   </MDBNavLink>
