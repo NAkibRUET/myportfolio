@@ -1,15 +1,7 @@
 import React from "react";
 import { withStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
-import {
-  Button,
-  Dialog,
-  Typography,
-  TextField,
-  Grid,
-  MenuItem,
-  Divider,
-} from "@material-ui/core/";
+import { Dialog, Typography } from "@material-ui/core/";
 import MuiDialogTitle from "@material-ui/core/DialogTitle";
 import MuiDialogContent from "@material-ui/core/DialogContent";
 import MuiDialogActions from "@material-ui/core/DialogActions";
@@ -23,13 +15,16 @@ import "./di.css";
 const styles = (theme) => ({
   root: {
     margin: 0,
-    padding: theme.spacing(2),
+    paddingTop: "1rem",
+    paddingBottom: "0.2rem",
   },
   closeButton: {
     position: "absolute",
     right: theme.spacing(1),
     top: theme.spacing(1),
     color: theme.palette.grey[500],
+    border: "none !important",
+    outline: "none !important",
   },
   dialogPaper: {
     borderRadius: "10px",
@@ -83,6 +78,7 @@ class NeutrationDialog extends React.Component {
           open={this.props.open}
           fullWidth={true}
           disableBackdropClick
+          scroll="body"
           classes={{ paper: classes.dialogPaper }}
         >
           <DialogTitle

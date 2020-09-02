@@ -24,7 +24,7 @@ class NavbarPage extends Component {
   };
 
   render() {
-    //const url = process.env.NODE_ENV === "production" ? "/myportfolio" : "/";
+    //const url = process.env.NODE_ENV === "production" ? "/myportfolio" : "./";
     const style = {
       backgroundColor: "#fff",
       color: "green",

@@ -10,10 +10,20 @@ const styles = (theme) => ({
   },
   containerDiv: {
     maxWidth: "1500px",
-    margin: "40px auto",
+    margin: "10px auto",
   },
   personalInfo: {
     padding: "20px",
+    backgroundColor: "#fff",
+    height: "100%",
+  },
+  personalInfo2: {
+    padding: "5px 20px 0",
+    backgroundColor: "#fff",
+    height: "100%",
+  },
+  personalInfo3: {
+    padding: "3px 20px 20px",
     backgroundColor: "#fff",
     height: "100%",
   },
@@ -91,13 +101,13 @@ const AboutInfo = (props) => {
                 </Typography>
 
                 <Typography align="left" variant="subtitle2" className="pt-2">
-                  HSC
+                  HSC - 2014
                 </Typography>
                 <Typography align="left" variant="subtitle1">
                   <b>Govt K.C College, Jhenidah</b>
                 </Typography>
                 <Typography align="left" variant="subtitle2" className="pt-2">
-                  SSC
+                  SSC - 2012
                 </Typography>
                 <Typography align="left" variant="subtitle1">
                   <b>Govt Boys High School, Jhenidah</b>
@@ -107,7 +117,7 @@ const AboutInfo = (props) => {
           </Grid>
           <Grid container spacing={0}>
             <Grid item lg={3} md={6} sm={12} xs={12}>
-              <div className={classes.personalInfo}>
+              <div className={classes.personalInfo2}>
                 <Typography
                   align="left"
                   variant="h5"
@@ -150,7 +160,7 @@ const AboutInfo = (props) => {
               </div>
             </Grid>
             <Grid item lg={4} md={6} sm={12} xs={12}>
-              <div className={classes.personalInfo}>
+              <div className={classes.personalInfo2}>
                 <Typography
                   align="left"
                   variant="h5"
@@ -192,7 +202,7 @@ const AboutInfo = (props) => {
               </div>
             </Grid>
             <Grid item lg={5} md={6} sm={12} xs={12} className="">
-              <div className={classes.personalInfo}>
+              <div className={classes.personalInfo2}>
                 <Typography
                   align="left"
                   variant="h5"
@@ -358,6 +368,120 @@ const AboutInfo = (props) => {
                     }}
                   />
                 </div>
+              </div>
+            </Grid>
+          </Grid>
+          <br />
+          <div className={classes.personalInfo2}>
+            <Typography
+              align="left"
+              variant="h5"
+              color="secondary"
+              className={classes.infoHeader}
+            >
+              Work Experiences:
+            </Typography>
+          </div>
+          <Grid container spacing={0}>
+            <Grid item lg={6} md={6} sm={12} xs={12} className="">
+              <div className={classes.personalInfo3}>
+                <Typography align="left" variant="h6">
+                  <b>
+                    Front end Developer at{" "}
+                    <a href="https://aamartaka.com" target="_blank">
+                      AamarTaka.com
+                    </a>
+                  </b>{" "}
+                </Typography>
+                <Typography
+                  align="left"
+                  variant="subtitle2"
+                  color="textSecondary"
+                >
+                  <i>August 2020</i>
+                </Typography>
+                <Typography
+                  align="left"
+                  variant="subtitle2"
+                  color="textSecondary"
+                  className="mb-2"
+                >
+                  <i>Fin-tech Company, Banani, Dhaka</i>
+                </Typography>
+                <Typography
+                  align="justify"
+                  variant="subtitle2"
+                  color="textSecondary"
+                >
+                  - Worked at an e-commerce project named{" "}
+                  <a href="http://test.dailyshobji.com/" target="_blank">
+                    Daily-Shobji{" "}
+                  </a>
+                  with React-Redux, a subsidiary project of the mother company.
+                </Typography>
+                <Typography
+                  align="justify"
+                  variant="subtitle2"
+                  color="textSecondary"
+                >
+                  - Led the whole front end of the project, designed the project
+                  structure, connected APIs from backend, managed states with
+                  Redux etc.
+                </Typography>
+              </div>
+            </Grid>
+            <Grid item lg={6} md={6} sm={12} xs={12} className="">
+              <div className={classes.personalInfo3}>
+                <Typography align="left" variant="h6">
+                  <b>Part time Software Developer at 71bits</b>{" "}
+                </Typography>
+                <Typography
+                  align="left"
+                  variant="subtitle2"
+                  color="textSecondary"
+                  className="mb-2"
+                >
+                  <i>
+                    Feb 2019 - Aug 2019 &nbsp; & &nbsp; Mar 2020 - July 2020
+                  </i>
+                </Typography>
+
+                <Typography
+                  align="justify"
+                  variant="subtitle2"
+                  color="textSecondary"
+                >
+                  - Worked as a front end developer at a cross-platform desktop
+                  application named
+                  <a href="http://e-doctorscript.com/" target="_blank">
+                    {" "}
+                    E-DoctorScript{" "}
+                  </a>
+                  with React-Redux, a startup project by team 71bits
+                </Typography>
+                <Typography
+                  align="justify"
+                  variant="subtitle2"
+                  color="textSecondary"
+                >
+                  - Worked at the patient mobile app of{" "}
+                  <a href="http://e-doctorscript.com/" target="_blank">
+                    E-DoctorScript{" "}
+                  </a>
+                  with React-Native
+                </Typography>
+                <Typography
+                  align="justify"
+                  variant="subtitle2"
+                  color="textSecondary"
+                >
+                  - Worked at an e-commerce project named{" "}
+                  <a href="http://design-glasses.com/" target="_blank">
+                    Design Glasses{" "}
+                  </a>
+                  , which is made with Shopware CMS. Fixed front end issues and
+                  developed plugin.
+                </Typography>
               </div>
             </Grid>
           </Grid>

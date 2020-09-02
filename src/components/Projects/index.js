@@ -1,89 +1,31 @@
 import React, { useEffect, useState } from "react";
-import { withStyles, makeStyles, useTheme } from "@material-ui/core/styles";
-import {
-  Drawer,
-  Grid,
-  Button,
-  Paper,
-  Typography,
-  Tooltip,
-} from "@material-ui/core";
-import { Skeleton } from "@material-ui/lab";
+import { makeStyles, useTheme } from "@material-ui/core/styles";
+import { Grid, Button, Typography, Tooltip } from "@material-ui/core";
+
 import Card from "@material-ui/core/Card";
 import CardHeader from "@material-ui/core/CardHeader";
 import CardMedia from "@material-ui/core/CardMedia";
 import CardContent from "@material-ui/core/CardContent";
 import CardActions from "@material-ui/core/CardActions";
+import {
+  projectDetails,
+  projectImageSteps,
+  projectImageSteps2,
+} from "./ProjectDetails";
+import SkeletonDiv from "./SkeletonComponent";
 
-import { red } from "@material-ui/core/colors";
-import MobileStepper from "@material-ui/core/MobileStepper";
-import KeyboardArrowLeft from "@material-ui/icons/KeyboardArrowLeft";
-import KeyboardArrowRight from "@material-ui/icons/KeyboardArrowRight";
 import SwipeableViews from "react-swipeable-views";
 import { autoPlay } from "react-swipeable-views-utils";
 import DetailDialog from "./DetailDialog";
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
-const projectDetails = {
-  edoctorscript:
-    "<b>Description:</b><br/> Doctors can write prescription with a few clicks by our user friendly UI, mail the patient or print them. <br/>Provides every important aspects related to patient and prescription in one place. <br/>Stores patient records with treatment and consists huge medicine database. <br/><br/><b>My Contribution:</b><br/> I worked in this project as a part time front end developer in Reactjs - Redux under the team 71bits, a startup company. <br/> I am currently working in the patient android app of this project with React-Native",
-};
-
-const tutorialSteps = [
-  {
-    imgPath: "./epres01.png",
-  },
-  {
-    imgPath: "./epres02.png",
-  },
-  {
-    imgPath: "./ePres04.png",
-  },
-  {
-    imgPath: "./epres05.png",
-  },
-];
-const tutorialSteps2 = [
-  {
-    imgPath: "./madrasa10.png",
-  },
-  {
-    imgPath: "./madrasa06.png",
-  },
-  {
-    imgPath: "./madrasa04.png",
-  },
-  {
-    imgPath: "./madrasa09.png",
-  },
-  {
-    imgPath: "./madrasa03.png",
-  },
-  {
-    imgPath: "./madrasa02.png",
-  },
-];
-
-const styles = {
-  root: {
-    maxWidth: 345,
-  },
-  media: {
-    height: 0,
-    paddingTop: "56.25%", // 16:9
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
-};
-
 const useStyles = makeStyles((theme) => ({
   card: {
     width: "100%",
   },
   media: {
-    height: 190,
+    height: 180,
   },
   root: {
     maxWidth: 400,
@@ -110,67 +52,41 @@ const useStyles = makeStyles((theme) => ({
     overflow: "hidden",
     width: "100%",
   },
+  button1: {
+    background: "#418a3b",
+    color: "#fff",
+    width: "98%",
+    border: "none !important",
+    outline: "none !important",
+    "&:hover": {
+      background: "#348c2d",
+    },
+  },
+  button2: {
+    background: "#5db83c",
+    flexGrow: 1,
+    border: "none !important",
+    outline: "none !important",
+    "&:hover": {
+      background: "#4eba27",
+    },
+  },
   wrapper: {
-    width: "90%",
     margin: "20px auto",
     ["@media (min-width:320px)"]: {
       width: "90%",
     },
     ["@media (min-width:768px)"]: {
-      width: "80%",
+      width: "85%",
     },
     ["@media (min-width:1024px)"]: {
-      width: "75%",
+      width: "85%",
+    },
+    ["@media (min-width:1400px)"]: {
+      width: "70%",
     },
   },
 }));
-
-const SkeletonDiv = () => {
-  const classes = useStyles();
-  return (
-    <Grid item lg={4} md={6} sm={12} xs={12} style={{ padding: "20px" }}>
-      <Card className={classes.card}>
-        <CardHeader
-          title={
-            <Skeleton
-              animation="wave"
-              height={10}
-              width="80%"
-              style={{ marginBottom: 6 }}
-            />
-          }
-          subheader={<Skeleton animation="wave" height={10} width="40%" />}
-        />
-
-        <Skeleton animation="wave" variant="rect" className={classes.media} />
-
-        <CardContent>
-          <React.Fragment>
-            <Skeleton
-              animation="wave"
-              height={10}
-              style={{ marginBottom: 6 }}
-            />
-            <Skeleton
-              animation="wave"
-              height={10}
-              style={{ marginBottom: 6 }}
-            />
-            <Skeleton
-              animation="wave"
-              height={10}
-              style={{ marginBottom: 6 }}
-            />
-            <Skeleton animation="wave" height={10} width="80%" />
-          </React.Fragment>
-          <Typography variant="h3">
-            <Skeleton width="100%" />
-          </Typography>
-        </CardContent>
-      </Card>
-    </Grid>
-  );
-};
 
 const CustomPackage = (props) => {
   const [Loading, setLoading] = useState(true);
@@ -192,29 +108,13 @@ const CustomPackage = (props) => {
     }, 1000);
   }, []);
   const [activeStep, setActiveStep] = React.useState(0);
-  const maxSteps = tutorialSteps.length;
-
-  const handleNext = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack = () => {
-    setActiveStep((prevActiveStep) => prevActiveStep - 1);
-  };
+  const maxSteps = projectImageSteps.length;
 
   const handleStepChange = (step) => {
     setActiveStep(step);
   };
   const [activeStep2, setActiveStep2] = React.useState(0);
-  const maxSteps2 = tutorialSteps2.length;
-
-  const handleNext2 = () => {
-    setActiveStep2((prevActiveStep) => prevActiveStep + 1);
-  };
-
-  const handleBack2 = () => {
-    setActiveStep2((prevActiveStep) => prevActiveStep - 1);
-  };
+  const maxSteps2 = projectImageSteps2.length;
 
   const handleStepChange2 = (step) => {
     setActiveStep2(step);
@@ -236,13 +136,13 @@ const CustomPackage = (props) => {
               md={6}
               sm={12}
               xs={12}
-              style={{ padding: "15px" }}
+              style={{ padding: "30px" }}
             >
-              <Card className={classes.root} elevation="8">
+              <Card className={classes.root} elevation="12">
                 <CardHeader
                   title="E-DoctorScript"
                   subheader="Cross Platform Desktop Application"
-                  style={{ color: "#73a93c" }}
+                  style={{ color: "green" }}
                 />
                 <AutoPlaySwipeableViews
                   axis={theme.direction === "rtl" ? "x-reverse" : "x"}
@@ -250,7 +150,7 @@ const CustomPackage = (props) => {
                   onChangeIndex={handleStepChange}
                   enableMouseEvents
                 >
-                  {tutorialSteps.map((step, index) => (
+                  {projectImageSteps.map((step, index) => (
                     <div key={step.imgPath}>
                       {Math.abs(activeStep - index) <= 2 ? (
                         <img className={classes.img} src={step.imgPath} />
@@ -265,8 +165,8 @@ const CustomPackage = (props) => {
                     component="p"
                   >
                     <i>
-                      <span style={{ color: "#73a93c" }}>
-                        Development Tools:
+                      <span style={{ color: "green" }}>
+                        Development Tools:{" "}
                       </span>
                       ReactJs, Redux, ElectronJs, Java Spring
                     </i>
@@ -278,16 +178,13 @@ const CustomPackage = (props) => {
                     style={{ flexGrow: 1 }}
                     target="_blank"
                   >
-                    <Button
-                      variant="contained"
-                      style={{ width: "100%", border: "none", outline: "none" }}
-                    >
+                    <Button variant="contained" className={classes.button1}>
                       Website
                     </Button>
                   </a>
                   <Button
                     variant="contained"
-                    style={{ flexGrow: 1, border: "none", outline: "none" }}
+                    className={classes.button2}
                     onClick={() =>
                       handleShowDialog(
                         "E-DoctorScript",
@@ -306,13 +203,13 @@ const CustomPackage = (props) => {
               md={6}
               sm={12}
               xs={12}
-              style={{ padding: "15px" }}
+              style={{ padding: "30px" }}
             >
-              <Card className={classes.root} elevation="8">
+              <Card className={classes.root} elevation="12">
                 <CardHeader
-                  title="Talibe-Ilm"
+                  title="Talibe-ilm"
                   subheader="Madrasa Management Application"
-                  style={{ color: "#73a93c" }}
+                  style={{ color: "green" }}
                 />
                 <AutoPlaySwipeableViews
                   axis={theme.direction === "rtl" ? "x-reverse" : "x"}
@@ -321,7 +218,7 @@ const CustomPackage = (props) => {
                   enableMouseEvents
                   interval={4000}
                 >
-                  {tutorialSteps2.map((step, index) => (
+                  {projectImageSteps2.map((step, index) => (
                     <div key={step.imgPath}>
                       {Math.abs(activeStep2 - index) <= 2 ? (
                         <img className={classes.img2} src={step.imgPath} />
@@ -337,8 +234,8 @@ const CustomPackage = (props) => {
                     className="mt-3 pb-1"
                   >
                     <i>
-                      <span style={{ color: "#73a93c" }}>
-                        Development Tools:
+                      <span style={{ color: "green" }}>
+                        Development Tools:{" "}
                       </span>
                       ReactJs, Redux, Django Rest Framework
                     </i>
@@ -351,25 +248,135 @@ const CustomPackage = (props) => {
                     target="_blank"
                   >
                     <Tooltip title="Guest view not available yet">
-                      <Button
-                        variant="contained"
-                        style={{
-                          width: "100%",
-                          border: "none",
-                          outline: "none",
-                        }}
-                      >
+                      <Button variant="contained" className={classes.button1}>
                         Demo
                       </Button>
                     </Tooltip>
                   </a>
                   <Button
                     variant="contained"
-                    style={{ flexGrow: 1, border: "none", outline: "none" }}
+                    className={classes.button2}
+                    onClick={() =>
+                      handleShowDialog("Talibe-ilm", projectDetails.talibeIlm)
+                    }
+                  >
+                    Details
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid
+              item
+              lg={4}
+              md={6}
+              sm={12}
+              xs={12}
+              style={{ padding: "30px" }}
+            >
+              <Card className={classes.root} elevation="12">
+                <CardHeader
+                  title="Daily-Shobji"
+                  subheader="E-commerce site for fresh vegetables"
+                  style={{ color: "green" }}
+                />
+                <CardMedia
+                  className={classes.media}
+                  image={"/dailyShobji.png"}
+                  title={"Daily-Shobji"}
+                />
+                <CardContent>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    <i>
+                      <span style={{ color: "green" }}>
+                        Development Tools:{" "}
+                      </span>
+                      ReactJs, Redux, Django Rest Framework
+                    </i>
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <a
+                    href="http://test.dailyshobji.com/"
+                    style={{ flexGrow: 1 }}
+                    target="_blank"
+                  >
+                    <Tooltip title="Test Version">
+                      <Button variant="contained" className={classes.button1}>
+                        Live Demo
+                      </Button>
+                    </Tooltip>
+                  </a>
+                  <Button
+                    variant="contained"
+                    className={classes.button2}
                     onClick={() =>
                       handleShowDialog(
-                        "E-DoctorScript",
-                        projectDetails.edoctorscript
+                        "Daily-Shobji",
+                        projectDetails.dailyshobji
+                      )
+                    }
+                  >
+                    Details
+                  </Button>
+                </CardActions>
+              </Card>
+            </Grid>
+            <Grid
+              item
+              lg={4}
+              md={6}
+              sm={12}
+              xs={12}
+              style={{ padding: "30px" }}
+            >
+              <Card className={classes.root} elevation="12">
+                <CardHeader
+                  title="VarsityVoice"
+                  subheader="An Online News Portal"
+                  style={{ color: "green" }}
+                />
+                <CardMedia
+                  className={classes.media}
+                  image={"/varsityvoice.png"}
+                  title={"VarsityVoice"}
+                />
+                <CardContent>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    component="p"
+                  >
+                    <i>
+                      <span style={{ color: "green" }}>
+                        Development Tools:{" "}
+                      </span>
+                      HTML, CSS, JavaScript, Php
+                    </i>
+                  </Typography>
+                </CardContent>
+                <CardActions disableSpacing>
+                  <a
+                    href="https://www.varsityvoice.net/"
+                    style={{ flexGrow: 1 }}
+                    target="_blank"
+                  >
+                    <Tooltip title="Test Version">
+                      <Button variant="contained" className={classes.button1}>
+                        Live Demo
+                      </Button>
+                    </Tooltip>
+                  </a>
+                  <Button
+                    variant="contained"
+                    className={classes.button2}
+                    onClick={() =>
+                      handleShowDialog(
+                        "VarsityVoice",
+                        projectDetails.varsityvoice
                       )
                     }
                   >
@@ -397,4 +404,4 @@ const CustomPackage = (props) => {
     </>
   );
 };
-export default withStyles(styles)(CustomPackage);
+export default CustomPackage;
