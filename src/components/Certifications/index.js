@@ -116,7 +116,7 @@ const Certifications = (props) => {
                 />
                 <CardMedia
                   className={classes.media}
-                  image={"/coursera1.png"}
+                  image={"./coursera1.png"}
                   title={"AWS Coursera"}
                 />
                 <CardContent>
@@ -167,7 +167,7 @@ const Certifications = (props) => {
                 />
                 <CardMedia
                   className={classes.media}
-                  image={"/udemy1.jpg"}
+                  image={"./udemy1.jpg"}
                   title={"AWS Udemy"}
                 />
                 <CardContent>
@@ -218,7 +218,7 @@ const Certifications = (props) => {
                 />
                 <CardMedia
                   className={classes.media}
-                  image={"/udemy2.jpg"}
+                  image={"./udemy2.jpg"}
                   title={"ES6 Udemy"}
                 />
                 <CardContent>

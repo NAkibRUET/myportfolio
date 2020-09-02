@@ -281,7 +281,7 @@ const CustomPackage = (props) => {
                 />
                 <CardMedia
                   className={classes.media}
-                  image={"/dailyShobji.png"}
+                  image={"./dailyShobji.png"}
                   title={"Daily-Shobji"}
                 />
                 <CardContent>
@@ -341,7 +341,7 @@ const CustomPackage = (props) => {
                 />
                 <CardMedia
                   className={classes.media}
-                  image={"/varsityvoice.png"}
+                  image={"./varsityvoice.png"}
                   title={"VarsityVoice"}
                 />
                 <CardContent>
