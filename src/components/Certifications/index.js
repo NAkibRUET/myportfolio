@@ -114,11 +114,19 @@ const Certifications = (props) => {
                   className="cardHeader"
                   style={{ color: "#3996cc" }}
                 />
-                <CardMedia
-                  className={classes.media}
-                  image={"./coursera1.png"}
-                  title={"AWS Coursera"}
-                />
+                {process.env.NODE_ENV === "production" ? (
+                  <CardMedia
+                    className={classes.media}
+                    image={"./coursera1.png"}
+                    title={"AWS Coursera"}
+                  />
+                ) : (
+                  <CardMedia
+                    className={classes.media}
+                    image={"/coursera1.png"}
+                    title={"AWS Coursera"}
+                  />
+                )}
                 <CardContent>
                   <Typography
                     variant="body2"
@@ -165,11 +173,20 @@ const Certifications = (props) => {
                   className="cardHeader"
                   style={{ color: "#3996cc" }}
                 />
-                <CardMedia
-                  className={classes.media}
-                  image={"./udemy1.jpg"}
-                  title={"AWS Udemy"}
-                />
+                {process.env.NODE_ENV === "production" ? (
+                  <CardMedia
+                    className={classes.media}
+                    image={"./udemy1.jpg"}
+                    title={"AWS Udemy"}
+                  />
+                ) : (
+                  <CardMedia
+                    className={classes.media}
+                    image={"/udemy1.jpg"}
+                    title={"AWS Udemy"}
+                  />
+                )}
+
                 <CardContent>
                   <Typography
                     variant="body2"
@@ -216,11 +233,19 @@ const Certifications = (props) => {
                   className="cardHeader"
                   style={{ color: "#3996cc" }}
                 />
-                <CardMedia
-                  className={classes.media}
-                  image={"./udemy2.jpg"}
-                  title={"ES6 Udemy"}
-                />
+                {process.env.NODE_ENV === "production" ? (
+                  <CardMedia
+                    className={classes.media}
+                    image={"./udemy2.jpg"}
+                    title={"ES6 Udemy"}
+                  />
+                ) : (
+                  <CardMedia
+                    className={classes.media}
+                    image={"/udemy2.jpg"}
+                    title={"ES6 Udemy"}
+                  />
+                )}
                 <CardContent>
                   <Typography
                     variant="body2"

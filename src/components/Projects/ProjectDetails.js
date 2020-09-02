@@ -8,38 +8,75 @@ export const projectDetails = {
   varsityvoice:
     "<b style='color:green'>Description:</b><br/> Online News portal mainly focused on University news. <br/>Covers daily news of public/private institutions in Bangladesh, national and international news, career and scholarship news, motivational stories of students etc. <br/> Promotes Student journalism and gives a platform to gather experience for beginner journalists.<br/> <br/><b  style='color:green'>My Contribution:</b><br/> It's a client project. I developed the entire thing.<br/>",
 };
-
-export const projectImageSteps = [
-  {
-    imgPath: "./epres01.png",
-  },
-  {
-    imgPath: "./epres02.png",
-  },
-  {
-    imgPath: "./ePres04.png",
-  },
-  {
-    imgPath: "./epres05.png",
-  },
-];
-export const projectImageSteps2 = [
-  {
-    imgPath: "./madrasa10.png",
-  },
-  {
-    imgPath: "./madrasa06.png",
-  },
-  {
-    imgPath: "./madrasa04.png",
-  },
-  {
-    imgPath: "./madrasa09.png",
-  },
-  {
-    imgPath: "./madrasa03.png",
-  },
-  {
-    imgPath: "./madrasa02.png",
-  },
-];
+export const projectImageSteps =
+  process.env.NODE_ENV === "production"
+    ? [
+        {
+          imgPath: "./epres01.png",
+        },
+        {
+          imgPath: "./epres02.png",
+        },
+        {
+          imgPath: "./ePres04.png",
+        },
+        {
+          imgPath: "./epres05.png",
+        },
+      ]
+    : [
+        {
+          imgPath: "/epres01.png",
+        },
+        {
+          imgPath: "/epres02.png",
+        },
+        {
+          imgPath: "/ePres04.png",
+        },
+        {
+          imgPath: "/epres05.png",
+        },
+      ];
+export const projectImageSteps2 =
+  process.env.NODE_ENV === "production"
+    ? [
+        {
+          imgPath: "./madrasa10.png",
+        },
+        {
+          imgPath: "./madrasa06.png",
+        },
+        {
+          imgPath: "./madrasa04.png",
+        },
+        {
+          imgPath: "./madrasa09.png",
+        },
+        {
+          imgPath: "./madrasa03.png",
+        },
+        {
+          imgPath: "./madrasa02.png",
+        },
+      ]
+    : [
+        {
+          imgPath: "/madrasa10.png",
+        },
+        {
+          imgPath: "/madrasa06.png",
+        },
+        {
+          imgPath: "/madrasa04.png",
+        },
+        {
+          imgPath: "/madrasa09.png",
+        },
+        {
+          imgPath: "/madrasa03.png",
+        },
+        {
+          imgPath: "/madrasa02.png",
+        },
+      ];

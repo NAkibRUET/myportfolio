@@ -279,11 +279,20 @@ const CustomPackage = (props) => {
                   subheader="E-commerce site for fresh vegetables"
                   style={{ color: "green" }}
                 />
-                <CardMedia
-                  className={classes.media}
-                  image={"./dailyShobji.png"}
-                  title={"Daily-Shobji"}
-                />
+
+                {process.env.NODE_ENV === "production" ? (
+                  <CardMedia
+                    className={classes.media}
+                    image={"./dailyShobji.png"}
+                    title={"Daily-Shobji"}
+                  />
+                ) : (
+                  <CardMedia
+                    className={classes.media}
+                    image={"/dailyShobji.png"}
+                    title={"Daily-Shobji"}
+                  />
+                )}
                 <CardContent>
                   <Typography
                     variant="body2"
@@ -339,11 +348,20 @@ const CustomPackage = (props) => {
                   subheader="An Online News Portal"
                   style={{ color: "green" }}
                 />
-                <CardMedia
-                  className={classes.media}
-                  image={"./varsityvoice.png"}
-                  title={"VarsityVoice"}
-                />
+
+                {process.env.NODE_ENV === "production" ? (
+                  <CardMedia
+                    className={classes.media}
+                    image={"./varsityvoice.png"}
+                    title={"VarsityVoice"}
+                  />
+                ) : (
+                  <CardMedia
+                    className={classes.media}
+                    image={"/varsityvoice.png"}
+                    title={"VarsityVoice"}
+                  />
+                )}
                 <CardContent>
                   <Typography
                     variant="body2"

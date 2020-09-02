@@ -49,7 +49,11 @@ const AboutInfo = (props) => {
           <Grid container spacing={0} className={classes.sections}>
             <Grid item lg={3} md={6} sm={12} xs={12}>
               <div className={classes.personalInfo}>
-                <img src="./img3.jpg" className={classes.images} />
+                {process.env.NODE_ENV === "production" ? (
+                  <img src="./img3.jpg" className={classes.images} />
+                ) : (
+                  <img src="/img3.jpg" className={classes.images} />
+                )}
               </div>
             </Grid>
             <Grid item lg={4} md={6} sm={12} xs={12}>
