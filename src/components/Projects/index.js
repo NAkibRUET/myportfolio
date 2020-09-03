@@ -257,16 +257,12 @@ const CustomPackage = (props) => {
                 </CardContent>
                 <CardActions disableSpacing>
                   <a
-                    href="http://talib-e-ilm-web.s3-website-us-east-1.amazonaws.com/"
+                    href="javascript:void(0)"
                     style={{ flexGrow: 1 }}
                     target="_blank"
                   >
                     <Tooltip title="Guest view not available yet">
-                      <Button
-                        variant="contained"
-                        className={classes.button1}
-                        disabled
-                      >
+                      <Button variant="contained" className={classes.button1}>
                         Demo
                       </Button>
                     </Tooltip>
