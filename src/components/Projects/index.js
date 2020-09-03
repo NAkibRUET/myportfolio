@@ -86,6 +86,20 @@ const useStyles = makeStyles((theme) => ({
       width: "70%",
     },
   },
+  gridPadding: {
+    ["@media (min-width:320px)"]: {
+      padding: "10px !important",
+    },
+    ["@media (min-width:768px)"]: {
+      padding: "20px !important",
+    },
+    ["@media (min-width:1024px)"]: {
+      padding: "35px !important",
+    },
+    ["@media (min-width:1400px)"]: {
+      padding: "45px !important",
+    },
+  },
 }));
 
 const CustomPackage = (props) => {
@@ -136,7 +150,7 @@ const CustomPackage = (props) => {
               md={6}
               sm={12}
               xs={12}
-              style={{ padding: "30px" }}
+              className={classes.gridPadding}
             >
               <Card className={classes.root} elevation="12">
                 <CardHeader
@@ -203,7 +217,7 @@ const CustomPackage = (props) => {
               md={6}
               sm={12}
               xs={12}
-              style={{ padding: "30px" }}
+              className={classes.gridPadding}
             >
               <Card className={classes.root} elevation="12">
                 <CardHeader
@@ -271,7 +285,7 @@ const CustomPackage = (props) => {
               md={6}
               sm={12}
               xs={12}
-              style={{ padding: "30px" }}
+              className={classes.gridPadding}
             >
               <Card className={classes.root} elevation="12">
                 <CardHeader
@@ -340,7 +354,7 @@ const CustomPackage = (props) => {
               md={6}
               sm={12}
               xs={12}
-              style={{ padding: "30px" }}
+              className={classes.gridPadding}
             >
               <Card className={classes.root} elevation="12">
                 <CardHeader

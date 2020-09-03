@@ -67,6 +67,20 @@ const useStyles = makeStyles((theme) => ({
       width: "70%",
     },
   },
+  gridPadding: {
+    ["@media (min-width:320px)"]: {
+      padding: "10px !important",
+    },
+    ["@media (min-width:768px)"]: {
+      padding: "20px !important",
+    },
+    ["@media (min-width:1024px)"]: {
+      padding: "30px !important",
+    },
+    ["@media (min-width:1400px)"]: {
+      padding: "40px !important",
+    },
+  },
 }));
 
 const Certifications = (props) => {
@@ -105,7 +119,7 @@ const Certifications = (props) => {
               md={6}
               sm={12}
               xs={12}
-              style={{ padding: "30px" }}
+              className={classes.gridPadding}
             >
               <Card className={classes.root} elevation="12">
                 <CardHeader
@@ -164,7 +178,7 @@ const Certifications = (props) => {
               md={6}
               sm={12}
               xs={12}
-              style={{ padding: "30px" }}
+              className={classes.gridPadding}
             >
               <Card className={classes.root} elevation="12">
                 <CardHeader
@@ -224,7 +238,7 @@ const Certifications = (props) => {
               md={6}
               sm={12}
               xs={12}
-              style={{ padding: "30px" }}
+              className={classes.gridPadding}
             >
               <Card className={classes.root} elevation="12">
                 <CardHeader

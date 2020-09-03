@@ -17,12 +17,26 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: 400,
     flexGrow: 1,
   },
+  gridPadding: {
+    ["@media (min-width:320px)"]: {
+      padding: "10px !important",
+    },
+    ["@media (min-width:768px)"]: {
+      padding: "20px !important",
+    },
+    ["@media (min-width:1024px)"]: {
+      padding: "35px !important",
+    },
+    ["@media (min-width:1400px)"]: {
+      padding: "45px !important",
+    },
+  },
 }));
 
 const SkeletonDiv = () => {
   const classes = useStyles();
   return (
-    <Grid item lg={4} md={6} sm={12} xs={12} style={{ padding: "30px" }}>
+    <Grid item lg={4} md={6} sm={12} xs={12} className={classes.gridPadding}>
       <Card className={classes.card}>
         <CardHeader
           title={
