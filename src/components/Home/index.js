@@ -8,6 +8,7 @@ import Weather2 from "../weather";
 import { Spin } from "antd";
 import Clock from "react-clock";
 import "react-clock/dist/Clock.css";
+import { Skeleton } from "@material-ui/lab";
 
 const styles = (theme) => ({
   Spinner: {
@@ -31,7 +32,7 @@ const styles = (theme) => ({
   },
   personalInfo: {
     padding: "30px 0px",
-    backgroundColor: "#000000",
+    backgroundColor: "#000",
     height: "100%",
   },
   sections: {
@@ -102,6 +103,7 @@ class Home extends React.Component {
       noInternet2: false,
       swapDiv: false,
       opacityVal: 0.9,
+      imageLoading: true,
     };
   }
   componentDidMount() {
@@ -149,37 +151,105 @@ class Home extends React.Component {
               <Grid item lg={4} md={6} sm={12} xs={12}>
                 <div className={classes.personalInfo}>
                   {process.env.NODE_ENV === "production" ? (
-                    <img src="./01.jpg" className={classes.images} />
+                    <img
+                      src="./01.jpg"
+                      onLoad={() => this.setState({ imageLoading: false })}
+                      style={{
+                        display: this.state.imageLoading ? "none" : "block",
+                      }}
+                      className={classes.images}
+                    />
                   ) : (
-                    <img src="/01.jpg" className={classes.images} />
+                    <img
+                      src="/01.jpg"
+                      onLoad={() => this.setState({ imageLoading: false })}
+                      style={{
+                        display: this.state.imageLoading ? "none" : "block",
+                      }}
+                      className={classes.images}
+                    />
                   )}
+                  {this.state.imageLoading ? (
+                    <div style={{ display: "flex", justifyContent: "center" }}>
+                      <Skeleton
+                        variant="circle"
+                        width={200}
+                        height={200}
+                        style={{
+                          background: "#36373b",
+                        }}
+                      />
+                    </div>
+                  ) : null}
 
                   <br />
-                  <Typography align="center" variant="h5" color="secondary">
-                    Nakib Hossain
-                  </Typography>
 
-                  <Typography
-                    align="center"
-                    variant="subtitle2"
-                    className={classes.textColor}
-                  >
-                    CSE, RUET
-                  </Typography>
-                  <Typography
-                    align="center"
-                    variant="subtitle2"
-                    className={classes.textColor}
-                  >
-                    hussain0296@gmail.com
-                  </Typography>
-                  <Typography
-                    align="center"
-                    variant="subtitle2"
-                    className={classes.textColor}
-                  >
-                    +8801967101376
-                  </Typography>
+                  {this.state.imageLoading ? (
+                    <>
+                      <div style={{ width: "50%", margin: "0 auto" }}>
+                        <Typography align="center" variant="h4">
+                          <Skeleton
+                            width="90%"
+                            style={{
+                              background: "#36373b",
+                              marginLeft: "5%",
+                            }}
+                          />
+                        </Typography>
+                        <Skeleton
+                          width="60%"
+                          height={20}
+                          style={{
+                            background: "#36373b",
+                            marginLeft: "20%",
+                          }}
+                        />
+                        <Skeleton
+                          width="80%"
+                          height={20}
+                          style={{
+                            background: "#36373b",
+                            marginLeft: "10%",
+                          }}
+                        />
+                        <Skeleton
+                          width="70%"
+                          height={20}
+                          style={{
+                            background: "#36373b",
+                            marginLeft: "15%",
+                          }}
+                        />
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <Typography align="center" variant="h5" color="secondary">
+                        Nakib Hossain
+                      </Typography>
+                      <Typography
+                        align="center"
+                        variant="subtitle2"
+                        className={classes.textColor}
+                      >
+                        CSE, RUET
+                      </Typography>
+                      <Typography
+                        align="center"
+                        variant="subtitle2"
+                        className={classes.textColor}
+                      >
+                        hussain0296@gmail.com
+                      </Typography>
+                      <Typography
+                        align="center"
+                        variant="subtitle2"
+                        className={classes.textColor}
+                      >
+                        +8801967101376
+                      </Typography>
+                    </>
+                  )}
                 </div>
               </Grid>
               <Grid item lg={8} md={6} sm={12} xs={12}>

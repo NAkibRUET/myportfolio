@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { Grid, Paper, Typography, Chip } from "@material-ui/core";
 import TranslateIcon from "@material-ui/icons/Translate";
 import CodeIcon from "@material-ui/icons/Code";
-
+import { Skeleton } from "@material-ui/lab";
 import { withStyles } from "@material-ui/core/styles";
 const styles = (theme) => ({
   sections: {
@@ -18,9 +18,17 @@ const styles = (theme) => ({
     height: "100%",
   },
   personalInfo2: {
-    padding: "5px 20px 0",
     backgroundColor: "#fff",
     height: "100%",
+    ["@media (min-width:320px)"]: {
+      padding: "35px 20px 0px",
+    },
+    ["@media (min-width:768px)"]: {
+      padding: "10px 20px 10px",
+    },
+    ["@media (min-width:1024px)"]: {
+      padding: "5px 20px 0",
+    },
   },
   personalInfo3: {
     padding: "3px 20px 20px",
@@ -29,10 +37,19 @@ const styles = (theme) => ({
   },
   images: {
     display: "block",
-    width: "80%",
+
     transition: "transform .2s",
     "&:hover": {
       transform: "scale(1.25) translate(10%, 10%)",
+    },
+    ["@media (min-width:320px)"]: {
+      width: "80%",
+    },
+    ["@media (min-width:1000px)"]: {
+      width: "60%",
+    },
+    ["@media (min-width:1100px)"]: {
+      width: "80%",
     },
   },
   infoHeader: {
@@ -41,6 +58,13 @@ const styles = (theme) => ({
 });
 
 const AboutInfo = (props) => {
+  const [loading, setLoading] = useState(true);
+  console.log(loading);
+  const handleSetLoading = () => {
+    console.log("Hi");
+    setLoading(false);
+    console.log(loading);
+  };
   const { classes } = props;
   return (
     <div className="px-lg-5 px-md-5">
@@ -50,10 +74,23 @@ const AboutInfo = (props) => {
             <Grid item lg={3} md={6} sm={12} xs={12}>
               <div className={classes.personalInfo}>
                 {process.env.NODE_ENV === "production" ? (
-                  <img src="./img3.jpg" className={classes.images} />
+                  <img
+                    src="./img3.jpg"
+                    onLoad={() => setLoading(false)}
+                    className={classes.images}
+                    style={{ display: loading ? "none" : "block" }}
+                  />
                 ) : (
-                  <img src="/img3.jpg" className={classes.images} />
+                  <img
+                    src="/img3.jpg"
+                    onLoad={() => setLoading(false)}
+                    className={classes.images}
+                    style={{ display: loading ? "none" : "block" }}
+                  />
                 )}
+                {loading ? (
+                  <Skeleton variant="rect" width={200} height={200} />
+                ) : null}
               </div>
             </Grid>
             <Grid item lg={4} md={6} sm={12} xs={12}>
@@ -118,8 +155,7 @@ const AboutInfo = (props) => {
                 </Typography>
               </div>
             </Grid>
-          </Grid>
-          <Grid container spacing={0}>
+
             <Grid item lg={3} md={6} sm={12} xs={12}>
               <div className={classes.personalInfo2}>
                 <Typography
