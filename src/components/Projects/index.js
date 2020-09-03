@@ -262,7 +262,11 @@ const CustomPackage = (props) => {
                     target="_blank"
                   >
                     <Tooltip title="Guest view not available yet">
-                      <Button variant="contained" className={classes.button1}>
+                      <Button
+                        variant="contained"
+                        className={classes.button1}
+                        disabled
+                      >
                         Demo
                       </Button>
                     </Tooltip>
