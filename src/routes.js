@@ -14,14 +14,10 @@ class Routes extends Component {
       <Layout>
         {process.env.NODE_ENV === "production" ? (
           <Switch>
-            <Route path="/myportfolio" exact component={Home} />
-            <Route path="/myportfolio/about" exact component={About} />
-            <Route path="/myportfolio/projects" exact component={Projects} />
-            <Route
-              path="/myportfolio/certifications"
-              exact
-              component={Certification}
-            />
+            <Route path="/" exact component={Home} />
+            <Route path="/about" exact component={About} />
+            <Route path="/projects" exact component={Projects} />
+            <Route path="/certifications" exact component={Certification} />
           </Switch>
         ) : (
           <Switch>
