@@ -47,31 +47,37 @@ class NavbarPage extends Component {
             <MDBNavbarToggler onClick={this.toggleCollapse} />
             <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
               <MDBNavbarNav right className="pr-lg-5">
-                <MDBNavItem active={pathName == "/"}>
+                <MDBNavItem active={pathName == "/myportfolio/"}>
                   <MDBNavLink
-                    to="/"
-                    onClick={() => this.props.history.push("/")}
+                    to="/myportfolio/"
+                    onClick={() => this.props.history.push("/myportfolio/")}
                   >
                     Home
                   </MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem
                   active={pathName.match(/about/g) != null}
-                  onClick={() => this.props.history.push("/about")}
+                  onClick={() => this.props.history.push("/myportfolio/about")}
                 >
-                  <MDBNavLink to="/about">About</MDBNavLink>
+                  <MDBNavLink to="/myportfolio/about">About</MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem
                   active={pathName.match(/projects/g) != null}
-                  onClick={() => this.props.history.push("/projects")}
+                  onClick={() =>
+                    this.props.history.push("/myportfolio/projects")
+                  }
                 >
-                  <MDBNavLink to="/projects">Projects</MDBNavLink>
+                  <MDBNavLink to="/myportfolio/projects">Projects</MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem
                   active={pathName.match(/certifications/g) != null}
-                  onClick={() => this.props.history.push("/certifications")}
+                  onClick={() =>
+                    this.props.history.push("/myportfolio/certifications")
+                  }
                 >
-                  <MDBNavLink to="/certifications">Certifications</MDBNavLink>
+                  <MDBNavLink to="/myportfolio/certifications">
+                    Certifications
+                  </MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem>
                   <MDBNavLink to="#!">My Blogs</MDBNavLink>
