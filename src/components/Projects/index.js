@@ -290,7 +290,7 @@ const CustomPackage = (props) => {
               <Card className={classes.root} elevation="12">
                 <CardHeader
                   title="Daily-Shobji"
-                  subheader="E-commerce site for fresh vegetables"
+                  subheader="E-commerce site for Vegetables"
                   style={{ color: "green" }}
                 />
 
