@@ -323,7 +323,7 @@ const CustomPackage = (props) => {
                 </CardContent>
                 <CardActions disableSpacing>
                   <a
-                    href="http://test.dailyshobji.com/"
+                    href="https://dailyshobji.com/"
                     style={{ flexGrow: 1 }}
                     target="_blank"
                   >
@@ -395,12 +395,11 @@ const CustomPackage = (props) => {
                     href="https://www.varsityvoice.net/"
                     style={{ flexGrow: 1 }}
                     target="_blank"
-                  >
-                    <Tooltip title="Test Version">
-                      <Button variant="contained" className={classes.button1}>
-                        Live Demo
-                      </Button>
-                    </Tooltip>
+                  >                    
+                    <Button variant="contained" className={classes.button1}>
+                      Live Demo
+                    </Button>
+                    
                   </a>
                   <Button
                     variant="contained"
