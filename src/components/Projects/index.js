@@ -259,7 +259,7 @@ const CustomPackage = (props) => {
                   <a
                     href="javascript:void(0)"
                     style={{ flexGrow: 1 }}
-                    target="_blank"
+                    //target="_blank"
                   >
                     <Tooltip title="Guest view not available yet">
                       <Button variant="contained" className={classes.button1}>
@@ -327,11 +327,9 @@ const CustomPackage = (props) => {
                     style={{ flexGrow: 1 }}
                     target="_blank"
                   >
-                    <Tooltip title="Test Version">
-                      <Button variant="contained" className={classes.button1}>
-                        Live Demo
-                      </Button>
-                    </Tooltip>
+                    <Button variant="contained" className={classes.button1}>
+                      Live Demo
+                    </Button>
                   </a>
                   <Button
                     variant="contained"
@@ -395,11 +393,10 @@ const CustomPackage = (props) => {
                     href="https://www.varsityvoice.net/"
                     style={{ flexGrow: 1 }}
                     target="_blank"
-                  >                    
+                  >
                     <Button variant="contained" className={classes.button1}>
                       Live Demo
                     </Button>
-                    
                   </a>
                   <Button
                     variant="contained"
