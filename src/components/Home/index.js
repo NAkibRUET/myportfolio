@@ -232,21 +232,23 @@ class Home extends React.Component {
                         variant="subtitle2"
                         className={classes.textColor}
                       >
-                        CSE, RUET
+                        Jr. Software Engineer
                       </Typography>
+                      <a href="https://www.hoxro.com/" target="_blank">
+                        <Typography
+                          align="center"
+                          variant="subtitle2"
+                          className={classes.textColor}
+                        >
+                          Hoxro Dev Centre
+                        </Typography>
+                      </a>
                       <Typography
                         align="center"
                         variant="subtitle2"
                         className={classes.textColor}
                       >
                         hussain0296@gmail.com
-                      </Typography>
-                      <Typography
-                        align="center"
-                        variant="subtitle2"
-                        className={classes.textColor}
-                      >
-                        +8801967101376
                       </Typography>
                     </>
                   )}
