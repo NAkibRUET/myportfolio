@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import { Grid, Paper, Typography, Chip } from "@material-ui/core";
-import TranslateIcon from "@material-ui/icons/Translate";
-import CodeIcon from "@material-ui/icons/Code";
-import { Skeleton } from "@material-ui/lab";
+import { Chip, Grid, Paper, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
+import CodeIcon from "@material-ui/icons/Code";
+import TranslateIcon from "@material-ui/icons/Translate";
+import { Skeleton } from "@material-ui/lab";
+import React, { useState } from "react";
 const styles = (theme) => ({
   sections: {
     marginTop: "20px",
@@ -423,7 +423,48 @@ const AboutInfo = (props) => {
             </Typography>
           </div>
           <Grid container spacing={0}>
-            <Grid item lg={6} md={6} sm={12} xs={12} className="">
+          <Grid item lg={3} md={3} sm={12} xs={12} className="">
+              <div className={classes.personalInfo3}>
+                <Typography align="left" variant="h6">
+                  <b>
+                    Jr. Software Engineer at{" "}
+                    <a href="https://hoxro.com" target="_blank">
+                      Hoxro Dev Centre
+                    </a>
+                  </b>{" "}
+                </Typography>
+                <Typography
+                  align="left"
+                  variant="subtitle2"
+                  color="textSecondary"
+                >
+                  <i>November 2020 - Present</i>
+                </Typography>
+                <Typography
+                  align="left"
+                  variant="subtitle2"
+                  color="textSecondary"
+                  className="mb-2"
+                >
+                  <i>UK based Legal Management Software Company</i>
+                </Typography>
+                <Typography
+                  align="justify"
+                  variant="subtitle2"
+                  color="textSecondary"
+                >
+                  - Developing the mobile version of Hoxro LMS app for both{" "}
+                  <a href="https://play.google.com/store/apps/details?id=com.hoxro.lms.app.android&hl=en&gl=US" target="_blank">
+                    android{" "}
+                  </a> 
+                  & <a href="https://apps.apple.com/tr/app/hoxro-lms/id1118765777" target="_blank">
+                    ios{" "}
+                  </a>
+                  platform with Flutter.
+                </Typography>
+              </div>
+            </Grid>
+            <Grid item lg={4} md={4} sm={12} xs={12} className="">
               <div className={classes.personalInfo3}>
                 <Typography align="left" variant="h6">
                   <b>
@@ -470,7 +511,7 @@ const AboutInfo = (props) => {
                 </Typography>
               </div>
             </Grid>
-            <Grid item lg={6} md={6} sm={12} xs={12} className="">
+            <Grid item lg={5} md={5} sm={12} xs={12} className="">
               <div className={classes.personalInfo3}>
                 <Typography align="left" variant="h6">
                   <b>Part time Software Developer at 71bits</b>{" "}
