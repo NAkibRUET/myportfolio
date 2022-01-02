@@ -111,9 +111,9 @@ class Home extends React.Component {
       loading: true,
     });
     setInterval(() => this.setState({ date: new Date() }), 1000);
-
+    //33.7490° N, 84.3880° W
     Axios.get(
-      "https://api.openweathermap.org/data/2.5/onecall?lat=23.8103&lon=90.4125&appid=" +
+      "https://api.openweathermap.org/data/2.5/onecall?lat=33.753746&lon=-84.386330&appid=" +
         AppConfig.WEATHER_API_KEY
     )
       .then((response) => {
@@ -127,18 +127,18 @@ class Home extends React.Component {
       .catch((response) => {
         this.setState({ loading: false, noInternet1: true });
       });
-    Axios.get(
-      "https://api.openweathermap.org/data/2.5/onecall?lat=23.5450&lon=89.1726&appid=" +
-        AppConfig.WEATHER_API_KEY
-    )
-      .then((response) => {
-        this.setState({
-          weatherData2: response.data,
-        });
-      })
-      .catch((response) => {
-        this.setState({ loading: false, noInternet2: true });
-      });
+    // Axios.get(
+    //   "https://api.openweathermap.org/data/2.5/onecall?lat=23.5450&lon=89.1726&appid=" +
+    //     AppConfig.WEATHER_API_KEY
+    // )
+    //   .then((response) => {
+    //     this.setState({
+    //       weatherData2: response.data,
+    //     });
+    //   })
+    //   .catch((response) => {
+    //     this.setState({ loading: false, noInternet2: true });
+    //   });
   }
   render() {
     const { classes } = this.props;
@@ -232,7 +232,7 @@ class Home extends React.Component {
                         variant="subtitle2"
                         className={classes.textColor}
                       >
-                        Jr. Software Engineer
+                        Former Software Engineer
                       </Typography>
                       <a href="https://www.hoxro.com/" target="_blank">
                         <Typography
@@ -266,7 +266,7 @@ class Home extends React.Component {
                         {this.state.noInternet1 == false ? (
                           <Weather
                             weatherData={this.state.weatherData1}
-                            CT_NAME="Dhaka"
+                            CT_NAME="Atlanta"
                           />
                         ) : null}
                       </div>

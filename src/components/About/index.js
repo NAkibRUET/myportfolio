@@ -1,9 +1,10 @@
 import { Chip, Grid, Paper, Typography } from "@material-ui/core";
 import { withStyles } from "@material-ui/core/styles";
+import Axios from "axios";
 import CodeIcon from "@material-ui/icons/Code";
 import TranslateIcon from "@material-ui/icons/Translate";
 import { Skeleton } from "@material-ui/lab";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 const styles = (theme) => ({
   sections: {
     marginTop: "20px",
@@ -57,8 +58,11 @@ const styles = (theme) => ({
   },
 });
 
+
+
 const AboutInfo = (props) => {
   const [loading, setLoading] = useState(true);
+  
   console.log(loading);
   const handleSetLoading = () => {
     console.log("Hi");
@@ -66,6 +70,9 @@ const AboutInfo = (props) => {
     console.log(loading);
   };
   const { classes } = props;
+
+  
+
   return (
     <div className="px-lg-5 px-md-5">
       <div className="px-lg-5 px-md-5">
@@ -110,7 +117,7 @@ const AboutInfo = (props) => {
                   <b>Birthday:</b> 09 Feb, 1997
                 </Typography>
                 <Typography align="left" variant="subtitle1">
-                  <b>Mobile:</b> +8801967101376
+                  <b>Mobile:</b> +14708869341
                 </Typography>
                 <Typography align="left" variant="subtitle1">
                   <b>Email:</b> hussain0296@gmail.com
@@ -120,7 +127,7 @@ const AboutInfo = (props) => {
                   variant="subtitle1"
                   style={{ width: "300px" }}
                 >
-                  <b>Address:</b> Hamdah, Jhenidah Sadar, Jhenidah
+                  <b>Address:</b> Dacula, GA
                 </Typography>
               </div>
             </Grid>
@@ -166,7 +173,15 @@ const AboutInfo = (props) => {
                 >
                   Problem Solving:
                 </Typography>
-
+                <Typography align="left" variant="subtitle2">
+                  <a
+                    href="https://leetcode.com/N4K1B/"
+                    target="_blank"
+                  >
+                    Leetcode -
+                  </a>
+                  <i> Solved 40+ problems</i>
+                </Typography>
                 <Typography align="left" variant="subtitle2">
                   <a
                     href="https://codeforces.com/profile/NAkib_RUET"
@@ -178,12 +193,12 @@ const AboutInfo = (props) => {
                 </Typography>
                 <Typography align="left" variant="subtitle2">
                   <a
-                    href="http://lightoj.com/volume_userstat.php?user_id=28194"
+                    href="https://lightoj.com/user/hussain0296"
                     target="_blank"
                   >
                     LightOj -
                   </a>
-                  <i> Solved 86 problems</i>
+                  <i> Solved 85 problems</i>
                 </Typography>
                 <Typography align="left" variant="subtitle2">
                   <a
@@ -427,7 +442,7 @@ const AboutInfo = (props) => {
               <div className={classes.personalInfo3}>
                 <Typography align="left" variant="h6">
                   <b>
-                    Jr. Software Engineer at{" "}
+                    Software Engineer at{" "}
                     <a href="https://hoxro.com" target="_blank">
                       Hoxro Dev Centre
                     </a>
@@ -438,7 +453,7 @@ const AboutInfo = (props) => {
                   variant="subtitle2"
                   color="textSecondary"
                 >
-                  <i>November 2020 - Present</i>
+                  <i>November 2020 - December 2021</i>
                 </Typography>
                 <Typography
                   align="left"
