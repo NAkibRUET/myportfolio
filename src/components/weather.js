@@ -36,7 +36,7 @@ function formatHour(hour10) {
   return str;
 }
 function getImageUrl(icon) {
-  let url = "http://openweathermap.org/img/wn/" + icon + "@2x.png";
+  let url = "https://openweathermap.org/img/wn/" + icon + "@2x.png";
   return url;
 }
 class Weather extends React.Component {
