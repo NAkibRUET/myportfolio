@@ -510,7 +510,7 @@ const AboutInfo = (props) => {
                   color="textSecondary"
                 >
                   - Worked at an e-commerce project named{" "}
-                  <a href="http://test.dailyshobji.com/" target="_blank">
+                  <a href="#" target="_blank">
                     Daily-Shobji{" "}
                   </a>
                   with React-Redux, a subsidiary project of the mother company.
@@ -549,7 +549,7 @@ const AboutInfo = (props) => {
                 >
                   - Worked as a front end developer at a cross-platform desktop
                   application named
-                  <a href="http://e-doctorscript.com/" target="_blank">
+                  <a href="#" target="_blank">
                     {" "}
                     E-DoctorScript{" "}
                   </a>
@@ -561,7 +561,7 @@ const AboutInfo = (props) => {
                   color="textSecondary"
                 >
                   - Worked at the patient mobile app of{" "}
-                  <a href="http://e-doctorscript.com/" target="_blank">
+                  <a href="#" target="_blank">
                     E-DoctorScript{" "}
                   </a>
                   with React-Native
@@ -572,7 +572,7 @@ const AboutInfo = (props) => {
                   color="textSecondary"
                 >
                   - Worked at an e-commerce project named{" "}
-                  <a href="http://design-glasses.com/" target="_blank">
+                  <a href="https://design-glasses.com/" target="_blank">
                     Design Glasses{" "}
                   </a>
                   , which is made with Shopware CMS. Fixed front end issues and
