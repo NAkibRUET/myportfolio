@@ -12,7 +12,7 @@ class Routes extends Component {
   render() {
     return (
       <Layout>
-        {process.env.NODE_ENV === "production" ? (
+        {/* {process.env.NODE_ENV === "production" ? (
           <Switch>
             <Route path="/myportfolio" exact component={Home} />
             <Route path="/myportfolio/about" exact component={About} />
@@ -23,14 +23,14 @@ class Routes extends Component {
               component={Certification}
             />
           </Switch>
-        ) : (
+        ) : ( */}
           <Switch>
             <Route path="/" exact component={Home} />
             <Route path="/about" exact component={About} />
             <Route path="/projects" exact component={Projects} />
             <Route path="/certifications" exact component={Certification} />
           </Switch>
-        )}
+        {/* )} */}
       </Layout>
     );
   }

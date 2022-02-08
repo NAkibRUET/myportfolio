@@ -33,7 +33,7 @@ class NavbarPage extends Component {
     console.log(pathName);
     return (
       <Router>
-        {process.env.NODE_ENV === "production" ? (
+        {/* {process.env.NODE_ENV === "production" ? (
           <MDBNavbar
             color="black"
             dark
@@ -88,7 +88,7 @@ class NavbarPage extends Component {
               </MDBNavbarNav>
             </MDBCollapse>
           </MDBNavbar>
-        ) : (
+        ) : ( */}
           <MDBNavbar
             color="black"
             dark
@@ -137,7 +137,7 @@ class NavbarPage extends Component {
               </MDBNavbarNav>
             </MDBCollapse>
           </MDBNavbar>
-        )}
+        {/* )} */}
       </Router>
     );
   }
